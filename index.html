@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Name | Academic Page</title>
+<style>
+  :root{
+    --bg:#fbfbf9;
+    --ink:#1a1a1a;
+    --muted:#6b6b6b;
+    --line:#e4e2dc;
+    --accent:#2b5f4f;      /* deep academic green */
+    --accent-soft:#eaf1ee;
+    --card:#ffffff;
+    --maxw:820px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:Georgia,"Times New Roman",serif;
+    line-height:1.65;
+    font-size:17px;
+  }
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:100;
+    background:rgba(251,251,249,.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--maxw);margin:0 auto;
+    padding:14px 24px;
+    display:flex;align-items:center;justify-content:space-between;
+    gap:16px;flex-wrap:wrap;
+    font-family:-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:14px;
+  }
+  .nav-inner .brand{font-weight:600;letter-spacing:.02em}
+  .nav-links{display:flex;gap:18px;flex-wrap:wrap}
+  .nav-links a{color:var(--muted)}
+  .nav-links a:hover{color:var(--accent);text-decoration:none}
+
+  /* ---------- LAYOUT ---------- */
+  main{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  section{padding:48px 0;border-bottom:1px solid var(--line)}
+  section:last-child{border-bottom:none}
+  h2{
+    font-family:-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:14px;font-weight:600;text-transform:uppercase;
+    letter-spacing:.12em;color:var(--accent);margin-bottom:24px;
+  }
+  h3{font-size:20px;margin-bottom:2px}
+  .sub{color:var(--muted);font-style:italic;font-size:15px}
+  .when{
+    font-family:-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:13px;color:var(--muted);white-space:nowrap;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{padding:56px 0 48px;display:flex;gap:32px;align-items:center;flex-wrap:wrap}
+  .hero img{
+    width:130px;height:130px;border-radius:50%;object-fit:cover;
+    border:3px solid var(--accent-soft);flex-shrink:0;
+  }
+  .hero h1{font-size:38px;line-height:1.15;margin-bottom:8px}
+  .hero .role{
+    font-family:-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:15px;color:var(--muted);text-transform:uppercase;
+    letter-spacing:.08em;margin-bottom:12px;
+  }
+  .contact{
+    font-family:-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:14px;margin-top:14px;display:flex;gap:16px;flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-block;background:var(--accent);color:#fff;
+    padding:8px 16px;border-radius:6px;font-size:14px;
+    font-family:-apple-system,Segoe UI,Roboto,sans-serif;
+  }
+  .btn:hover{text-decoration:none;opacity:.9}
+
+  /* ---------- ENTRIES ---------- */
+  .entry{margin-bottom:28px}
+  .entry:last-child{margin-bottom:0}
+  .entry-head{display:flex;justify-content:space-between;gap:16px;align-items:baseline}
+  .entry ul{margin:8px 0 0 20px}
+  .entry li{margin-bottom:4px;font-size:15.5px}
+  .links{
+    font-family:-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:13px;margin-top:6px;
+  }
+  .links a{margin-right:14px}
+
+  /* ---------- SKILLS ---------- */
+  table.skills{width:100%;border-collapse:collapse;font-size:15px}
+  table.skills td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  table.skills td:first-child{
+    font-family:-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:13px;color:var(--muted);white-space:nowrap;width:170px;
+  }
+
+  footer{
+    max-width:var(--maxw);margin:0 auto;padding:32px 24px 48px;
+    font-family:-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:13px;color:var(--muted);text-align:center;
+  }
+
+  @media(max-width:600px){
+    .hero h1{font-size:30px}
+    .entry-head{flex-direction:column;gap:2px}
+    table.skills td:first-child{width:auto;display:block;padding-bottom:0}
+    table.skills td{display:block;border:none;padding:2px 0}
+    table.skills tr{display:block;border-bottom:1px solid var(--line);padding:8px 0}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <span class="brand">Your Name</span>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#awards">Awards</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <header class="hero" id="about">
+    <img src="img/profile.jpg" alt="Profile photo">
+    <div>
+      <h1>Your Name</h1>
+      <div class="role">PhD Candidate · University Name</div>
+      <p>
+        One or two sentences about your research focus and background. Describe your field,
+        your approach, and what drives your work. Mention your advisor if you like, e.g.
+        working under <a href="#">Dr. Advisor Name</a>.
+      </p>
+      <div class="contact">
+        <a href="mailto:you@example.com">you@example.com</a>
+        <a href="https://scholar.google.com/">Google Scholar</a>
+        <a href="https://github.com/yourusername">GitHub</a>
+        <a href="https://linkedin.com/in/yourusername">LinkedIn</a>
+      </div>
+      <div class="contact"><a class="btn" href="docs/CV.pdf">Download CV</a></div>
+    </div>
+  </header>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div>
+          <h3>University / Lab Name</h3>
+          <div class="sub">Research Assistant</div>
+        </div>
+        <div class="when">Jan 2023 – Present</div>
+      </div>
+      <ul>
+        <li>Describe a key responsibility or contribution.</li>
+        <li>Another notable result or method you worked with.</li>
+      </ul>
+      <div class="links">
+        <a href="#">Paper</a><a href="#">Code</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div>
+          <h3>Previous Institution</h3>
+          <div class="sub">Research Intern</div>
+        </div>
+        <div class="when">Summer 2022</div>
+      </div>
+      <ul>
+        <li>What you built or studied there.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <h2>Education</h2>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div>
+          <h3>University Name</h3>
+          <div class="sub">Ph.D. in Field</div>
+        </div>
+        <div class="when">2023 – Present</div>
+      </div>
+      <ul><li>Advised by <a href="#">Dr. Advisor Name</a>.</li></ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div>
+          <h3>University Name</h3>
+          <div class="sub">M.Sc. in Field · GPA X/Y</div>
+        </div>
+        <div class="when">2020 – 2023</div>
+      </div>
+      <ul><li>Thesis: <em>Your thesis title here</em>.</li></ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div>
+          <h3>University Name</h3>
+          <div class="sub">B.Sc. in Field · GPA X/Y</div>
+        </div>
+        <div class="when">2016 – 2020</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="entry">
+      <h3><a href="#">Project Title One</a></h3>
+      <ul>
+        <li>What the project does and the method used.</li>
+        <li>A concrete result or metric.</li>
+      </ul>
+      <div class="links"><a href="#">GitHub</a><a href="#">Paper</a></div>
+    </div>
+
+    <div class="entry">
+      <h3><a href="#">Project Title Two</a></h3>
+      <ul>
+        <li>Short description of the project.</li>
+      </ul>
+      <div class="links"><a href="#">GitHub</a></div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <table class="skills">
+      <tr><td>Languages</td><td>Python, C++, R, JavaScript</td></tr>
+      <tr><td>Frameworks</td><td>PyTorch, TensorFlow, NumPy, Pandas, scikit-learn</td></tr>
+      <tr><td>Tools</td><td>Git, Docker, LaTeX, Jupyter, Unix shell</td></tr>
+      <tr><td>Math</td><td>Statistics &amp; Probability, Optimization, Linear Algebra</td></tr>
+    </table>
+  </section>
+
+  <!-- AWARDS -->
+  <section id="awards">
+    <h2>Awards &amp; Honors</h2>
+    <div class="entry">
+      <ul>
+        <li><strong>Award / Fellowship Name</strong>, amount or detail, 2023</li>
+        <li><strong>Scholarship Name</strong>, 2021</li>
+        <li><strong>Ranking / Recognition</strong>, 2019</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © <span id="yr"></span> Your Name · Built with GitHub Pages
+</footer>
+
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
